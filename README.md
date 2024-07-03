@@ -70,3 +70,5 @@ With Novu, you can create custom workflows and define conditions for each channe
 ## License
 
 This project is licensed under the MIT license.
+
+Key: DevkindSpikeTest
