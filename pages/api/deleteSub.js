@@ -1,8 +1,5 @@
 import { Novu } from "@novu/node";
 
-
-
-
 export default async function deletSub(req, res) {
     try {
         const novu = new Novu(process.env.NOVU_API_KEY);

@@ -1,19 +1,20 @@
 import { Novu } from '@novu/node';
 
-export default async function sendNotifToSub(req, res) {
+export default async function smsToSub(req, res) {
     try {
         const novu = new Novu(process.env.NOVU_API_KEY);
         
         
         if (req.method === 'POST') {
             const subscriberId = req.body.subscriberId;
-            const email = req.body.email;
-            console.log('subscriberId:', subscriberId);
-            console.log('email:', email);
-            const result = await novu.trigger("spiketesting", {
+            const phone = req.body.phone;
+            const result = await novu.trigger("spikesmstesting", {
                 to: {
                     subscriberId:subscriberId,
-                    email: email,
+                    phone: phone,
+                },
+                overrides: {
+                    from: "Spikesmstesting",
                 },
                 payload: {},
             });
