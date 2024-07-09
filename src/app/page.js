@@ -3,6 +3,7 @@ import styles from './page.module.css'
 import SubscriberForm from '@/components/addSub'
 import EmailNotify from '@/components/EmailNotify'
 import SMSNotify from '@/components/SMSNotify'
+import Image from 'next/image'
 
 import React, {useState} from 'react'
 
@@ -19,13 +20,15 @@ export default function Home() {
         <div><button onClick={() => setToggle(0)}>Email Notification</button></div>
         <div><button onClick={() => setToggle(1)}>SMS Notification</button></div>
         <div><button onClick={() => setToggle(2)}>Slack Notification</button></div>
-        <div><button onClick={() => setToggle(3)}>In-App Notification</button></div>
       </div>
 
       {toggle === 0 && <EmailNotify />}
       {toggle === 1 && <SMSNotify />}
-      {toggle === 2 && <h2>Slack Notification</h2>}
-      {toggle === 3 && <h2>In-App Notification</h2>}
+      {toggle === 2 && <div>
+        <h2>Slack Notification</h2>
+        </div>}
+      <a href='https://api.novu.co/v1/subscribers/SMSTest/credentials/slack/oauth?environmentId=6683d627d2d2bee3eb0240ff&integrationIdentifier=slack-Pmbd0LaAt' target='_blank'>Test, still in the works</a>
+
 
 
     </main>
